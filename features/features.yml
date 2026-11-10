@@ -1,0 +1,110 @@
+# =============================================================================
+# features/features.yml — THE FEATURE INDEX for recon-engine
+# =============================================================================
+# kit: verify v0.1.0 (seeded from bamr87/bamr87 templates/verify/)
+#
+# One entry per user-facing capability. This file is what an AI agent reads to
+# know what the product DOES, where it lives, how it is documented, which tests
+# and user scenarios prove it, and what evidence exists that it works. The hub
+# aggregates every repo's copy into its fleet features index
+# (bamr87/bamr87 _data/features_index.yml → /features/) and grades coverage:
+#
+#   covered    ≥1 of `tests` / `scenarios` exists on disk
+#   evidenced  ≥1 `evidence` bundle exists (README + screenshots + report)
+#   verified   `verified.date` is set (by an agent, a human, or CI)
+#
+# Schema: features/v1 — a strict SUPERSET of the shape zer0-mistakes,
+# it-journey, and barodybroject already use, so legacy files validate as-is.
+# Validate: python3 <hub>/tools/features_index.py check .
+#
+# Per feature:
+#   id            required  STABLE id, `^[A-Z0-9]+-[0-9]+$` (prefix per repo, e.g. ZER0-001)
+#   title         required  short name
+#   description   required  one or two sentences — what the user can do
+#   implemented   required  true|false (planned features are welcome — they show as gaps)
+#   surface       optional  ui | api | cli | docs | content | infra (default: ui when `link`
+#                           is a route starting with `/`, else infra)
+#   link          optional  the route (`/settings/`) or file that IS the feature
+#   docs          optional  where it is explained (path or URL)
+#   tags          optional  list
+#   date          optional  YYYY-MM-DD introduced
+#   provenance    optional  { introduced_in, pr, commit, issue }
+#   tests         optional  automated test files that pin it (paths)
+#   scenarios     optional  declarative user scenarios (verify/scenarios/*.yml)
+#   evidence      optional  evidence bundle dirs (test/evidence/<slug>/)
+#   screenshots   optional  direct image paths, when a bundle is overkill
+#   verified      optional  { date, by: agent|human|ci, run: <url> } — last verification
+#   deviations    optional  free text: why a MUST row is waived for this feature
+#   status        optional  shipped | partial | planned | deprecated | tbd (default from
+#                           `implemented`; governance kit, UPS-WORK-15)
+#   prd           optional  PRD requirement ids this feature serves, e.g. [FR1, NFR2]
+#                           (or `§4` for a PRD without ids; [TBD] when unknown)
+#
+# Top level (optional): `prd: path/to/PRD.md` when the PRD is not PRD.md or
+# docs/PRD.md. The PRD's "Feature catalog" block is GENERATED from this file:
+#   python3 <hub>/tools/governance_lint.py prd-sync . --write   (check: … check .)
+# =============================================================================
+schema: features/v1
+repo: bamr87/recon-engine
+# SPEC.md is the design of record and plays the PRD's part here: `prd:` refs are
+# its section numbers, and it carries the generated "Feature catalog" block.
+prd: SPEC.md
+
+# One entry per step of the build order (SPEC.md § 6). Nothing runs yet, so every
+# entry is `planned`; a step flips to `shipped` in the PR that implements, tests
+# and documents it. Ids RECON-NNN are stable and never reused.
+features:
+  - id: RECON-001
+    title: "Neutral schemas and the single monthly number"
+    description: "Load an operational event stream and a GL posting stream in the neutral schemas and get one monthly residual: GL-implied production value minus operations-implied production value."
+    implemented: false
+    status: planned
+    prd: ["§2", "§5.1"]
+    surface: api
+    docs: SPEC.md
+    tags: [build-step-1, core]
+  - id: RECON-002
+    title: "Six-bucket decomposition, gross not net, with transfer logging"
+    description: "Decompose the monthly residual into material, labor and machine, overhead absorption, timing, ghost and unexplained, never netting offsetting items, and log every inter-bucket transfer without an operational event as a flow into Unexplained."
+    implemented: false
+    status: planned
+    prd: ["§3"]
+    surface: api
+    docs: SPEC.md
+    tags: [build-step-2, core]
+  - id: RECON-003
+    title: "Django ERP adapter and a minimal period view"
+    description: "Feed the core from the Django ERP's inventory, production and journal models and show one period's decomposition inside the ERP."
+    implemented: false
+    status: planned
+    prd: ["§5.2", "§5.3"]
+    surface: ui
+    docs: SPEC.md
+    tags: [build-step-3, adapter]
+  - id: RECON-004
+    title: "Learned expectation: one regression per GL account"
+    description: "Predict what each GL account should look like from the month's operational drivers, trained on prior periods."
+    implemented: false
+    status: planned
+    prd: ["§4.1"]
+    surface: api
+    docs: SPEC.md
+    tags: [build-step-4, statistical-layer]
+  - id: RECON-005
+    title: "Anomaly detection on standardized residuals"
+    description: "Standardize each account's residual by its historical dispersion and score the signals of interpretation drifting from fact (Benford, autocorrelation, threshold clustering, close-period behavior, bucket migration, persistence), reporting explained, normal noise and an anomaly score."
+    implemented: false
+    status: planned
+    prd: ["§4.2", "§4.3", "§4.4"]
+    surface: api
+    docs: SPEC.md
+    tags: [build-step-5, statistical-layer]
+  - id: RECON-006
+    title: "File and API adapters for standalone use"
+    description: "Run the engine without the Django ERP: read CSV or Parquet exports from any ERP, or pull from an external ERP on a schedule."
+    implemented: false
+    status: planned
+    prd: ["§5.2"]
+    surface: cli
+    docs: SPEC.md
+    tags: [build-step-6, adapter]
