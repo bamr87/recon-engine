@@ -108,3 +108,11 @@ features:
     surface: cli
     docs: SPEC.md
     tags: [build-step-6, adapter]
+  - id: RECON-007
+    title: "Missions in constitution §1"
+    description: "Three product missions under one direction statement, ratified through amendment 0002."
+    implemented: false
+    status: planned
+    prd: ["§1.1"]
+    surface: docs
+    docs: "docs/constitution.md"
