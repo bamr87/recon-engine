@@ -9,9 +9,12 @@ The Recon Engine reconciles an operational event stream against a general ledger
 Python 3.12, standard library only for the core package (`recon_engine/`). Adapters may declare their own dependencies, never the core.
 
 ```bash
-python3 -m pip install -e .
-python3 -m pytest
+python3 -m pip install -e '.[dev]'         # the package plus pytest, pytest-cov and ruff
+python3 -m pytest                          # tests/ (pyproject [tool.pytest.ini_options]); add --cov=recon_engine for coverage
+ruff check . && ruff format --check .      # lint + format (pyproject [tool.ruff], line length 120)
 ```
+
+CI (`.github/workflows/ci.yml`, the hub's standard-ci) installs the package and pytest only and runs `pytest -q`; it does not run ruff, so run it before you push.
 
 ## Conventions
 

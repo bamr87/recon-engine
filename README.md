@@ -16,15 +16,16 @@ Three pieces are planned:
 
 ## Layout
 
-See [SCHEMA.md](SCHEMA.md). In brief: `SPEC.md` is the design of record, `recon_engine/` is the core package (stub until build step 1 lands), `tests/` arrives with it.
+See [SCHEMA.md](SCHEMA.md). In brief: `SPEC.md` is the design of record, `recon_engine/` is the core package (stub until build step 1 lands), and `tests/` is its pytest suite.
 
 ## Development
 
-Python 3.12, standard library only for the core (adapters may add their own dependencies).
+Python 3.12, standard library only for the core (adapters may add their own dependencies). The `dev` extra adds the tools: pytest, pytest-cov and ruff.
 
 ```bash
-python3 -m pip install -e .
-python3 -m pytest        # once tests exist
+python3 -m pip install -e '.[dev]'
+python3 -m pytest                          # coverage: python3 -m pytest --cov=recon_engine
+ruff check . && ruff format --check .
 ```
 
 ## Fleet context

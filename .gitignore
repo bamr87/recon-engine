@@ -5,5 +5,7 @@ build/
 dist/
 .venv/
 .pytest_cache/
+.coverage
+htmlcov/
 .env
 .DS_Store
