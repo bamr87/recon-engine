@@ -18,12 +18,13 @@ coverage: listed
 
 | entry | kind | purpose | rules |
 | --- | --- | --- | --- |
-| `test_*.py` | pattern | `test_<module>.py` pins one module of `recon_engine/`; `test_package.py` holds the package-wide checks (version, standard-library-only imports) | required |
+| `test_*.py` | pattern | `test_<module>.py` pins one module of `recon_engine/`; `test_package.py` holds the package-wide checks (version, public API, standard-library-only imports); `test_readme.py` runs the README's Quick start example | required |
 
 ## Placement
 
 - A test for `recon_engine/<module>.py` → `test_<module>.py`
 - A check that spans the whole package → `test_package.py`
+- A check that a README example still runs as shown → `test_readme.py`
 - Anything unrouted → propose an entry in this table first, then create it.
 
 ## Forbidden
