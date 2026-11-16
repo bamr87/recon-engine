@@ -2,7 +2,7 @@
 
 > Reconciles a business's operational event stream against its general ledger the way debits reconcile against credits: one monthly residual, decomposed gross-not-net into six buckets, with a statistical layer that scores where interpretation has drifted from fact.
 
-**Status:** specification stage. Nothing runs yet; the design is in [SPEC.md](SPEC.md) and the build order is its section 6.
+**Status:** build step 1 implemented (the neutral schemas and the single monthly number); step 2, the six-bucket decomposition, is next. The design is in [SPEC.md](SPEC.md) and the build order is its section 6.
 
 ## What it is
 
@@ -16,7 +16,7 @@ Three pieces are planned:
 
 ## Layout
 
-See [SCHEMA.md](SCHEMA.md). In brief: `SPEC.md` is the design of record, `recon_engine/` is the core package (stub until build step 1 lands), and `tests/` is its pytest suite.
+See [SCHEMA.md](SCHEMA.md). In brief: `SPEC.md` is the design of record, `recon_engine/` is the core package (build step 1: `schemas.py` and `residual.py`), and `tests/` is its pytest suite.
 
 ## Development
 
