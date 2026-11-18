@@ -6,9 +6,17 @@
 > Agents read this before [AGENTS.md](../AGENTS.md) conventions, the specification [SPEC.md](../SPEC.md) (this repo's PRD), or the
 > [feature catalog](../features/features.yml). Ratified by merged PR; amended only per § 8.
 
-## 1. Mission
+## 1. Missions
 
-The Recon Engine reconciles a business's operational event stream against its general ledger the way debits reconcile against credits. It serves the finance and operations sides of a manufacturing or technology business, first through the Django ERP ([bamr87/djangoerp](https://github.com/bamr87/djangoerp)), by assembling one honest monthly residual (`Residual = Finance − Operations`), decomposing it into six buckets, and scoring where interpretation has drifted from fact. The repo is at specification stage: [SPEC.md](../SPEC.md) is the design of record and its § 6 is the build order.
+The Recon Engine's direction is to become the ultimate open home for all things operational-to-ledger reconciliation — data, tools, resources and transparency, gathered in one place that anyone can inspect and reuse.
+
+1. **Provide data, tools, resources and transparency for all stakeholders, finance and operations professionals, and the general public.** Finance and operations teams, ERP operators, builders, and the general public are first-class audiences. The aim is a shared, open commons: the same residual, the same tools, and the same trail of evidence for everyone.
+2. **Make every month's residual honest, queryable and auditable.** Residual = Finance − Operations, decomposed gross-not-net into six buckets, with every inter-bucket transfer that has no operational event flowing into Unexplained. Interpretation is scored where it has drifted from fact; items are never silently netted against each other.
+3. **Put that recon in every operator's and builder's hands, starting with the path into the Django ERP.** Serve it as an open engine with a dependency-free core and a published build order — an open toolkit for working with all things operational-to-ledger reconciliation. The repo is at specification stage; these missions set the course and do not claim the engine already runs.
+
+These missions set the course; they do not claim the work is finished. They serve SPEC.md, the design of record: one monthly residual, six buckets, gross-never-net, and the build order in §6. The earlier single-mission paragraph from the governance-baseline PR is absorbed into these three. Invariants already stated in constitution §2 (spec leads, gross never net, transfers are events, dependency-free core, build order) stay in §2, unchanged. Every feature must trace to them.
+
+_Source: [../SPEC.md](../SPEC.md) §1.1._
 
 ## 2. Invariants (non-negotiable)
 

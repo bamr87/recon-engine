@@ -1,6 +1,6 @@
 # recon-engine
 
-> Reconciles a business's operational event stream against its general ledger the way debits reconcile against credits: one monthly residual, decomposed gross-not-net into six buckets, with a statistical layer that scores where interpretation has drifted from fact.
+> The Recon Engine's direction is to become the ultimate open home for all things operational-to-ledger reconciliation: data, tools, resources and transparency, with one honest monthly residual, gross-not-net buckets, and an inspectable core, for everyone ([constitution](docs/constitution.md) §1).
 
 **Status:** specification stage. Nothing runs yet; the design is in [SPEC.md](SPEC.md) and the build order is its section 6.
 

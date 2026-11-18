@@ -3,6 +3,8 @@
 
 # recon-engine
 
+> The Recon Engine's direction is to become the ultimate open home for all things operational-to-ledger reconciliation: data, tools, resources and transparency, with one honest monthly residual, gross-not-net buckets, and an inspectable core, for everyone ([constitution](docs/constitution.md) §1).
+
 Guidance for AI coding agents (Claude Code, Copilot, Cursor) working in recon-engine.
 
 ## What this repo is

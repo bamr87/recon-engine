@@ -18,6 +18,17 @@ Equity = Assets + Liabilities   →   Residual = Finance − Operations
 
 The strong form of the principle: every GL entry must trace to an operational event, and every operational event must have a GL footprint. Anything that violates this is, by definition, the residual.
 
+
+## 1.1 Missions
+
+The Recon Engine's direction is to become the ultimate open home for all things operational-to-ledger reconciliation — data, tools, resources and transparency, gathered in one place that anyone can inspect and reuse.
+
+1. **Provide data, tools, resources and transparency for all stakeholders, finance and operations professionals, and the general public.** Finance and operations teams, ERP operators, builders, and the general public are first-class audiences. The aim is a shared, open commons: the same residual, the same tools, and the same trail of evidence for everyone.
+2. **Make every month's residual honest, queryable and auditable.** Residual = Finance − Operations, decomposed gross-not-net into six buckets, with every inter-bucket transfer that has no operational event flowing into Unexplained. Interpretation is scored where it has drifted from fact; items are never silently netted against each other.
+3. **Put that recon in every operator's and builder's hands, starting with the path into the Django ERP.** Serve it as an open engine with a dependency-free core and a published build order — an open toolkit for working with all things operational-to-ledger reconciliation. The repo is at specification stage; these missions set the course and do not claim the engine already runs.
+
+These missions set the course; they do not claim the work is finished. They serve SPEC.md, the design of record: one monthly residual, six buckets, gross-never-net, and the build order in §6. The earlier single-mission paragraph from the governance-baseline PR is absorbed into these three. Invariants already stated in constitution §2 (spec leads, gross never net, transfers are events, dependency-free core, build order) stay in §2, unchanged. Every feature must trace to them.
+
 ## 2. The single monthly number
 
 Start with one figure per period.
@@ -142,6 +153,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [RECON-004](features/features.yml) | Learned expectation: one regression per GL account | planned | [`SPEC.md`](SPEC.md) | §4.1 |
 | [RECON-005](features/features.yml) | Anomaly detection on standardized residuals | planned | [`SPEC.md`](SPEC.md) | §4.2, §4.3, §4.4 |
 | [RECON-006](features/features.yml) | File and API adapters for standalone use | planned | [`SPEC.md`](SPEC.md) | §5.2 |
+| [RECON-007](features/features.yml) | Missions in constitution §1 | planned | [`docs/constitution.md`](docs/constitution.md) | §1.1 |
 
 **Requirement → feature trace**
 
@@ -156,6 +168,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | §4.2 | RECON-005 |
 | §4.3 | RECON-005 |
 | §4.4 | RECON-005 |
+| §1.1 | RECON-007 |
 <!-- features:end -->
 
 ## 7. Open questions
