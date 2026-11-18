@@ -1,6 +1,6 @@
 # recon-engine
 
-> Reconciles a business's operational event stream against its general ledger the way debits reconcile against credits: one monthly residual, decomposed gross-not-net into six buckets, with a statistical layer that scores where interpretation has drifted from fact.
+> The Recon Engine's direction is to become the ultimate open home for all things operational-to-ledger reconciliation: data, tools, resources and transparency, with one honest monthly residual, gross-not-net buckets, and an inspectable core, for everyone ([constitution](docs/constitution.md) §1).
 
 **Status:** build step 1 implemented (the neutral schemas and the single monthly number, see [Quick start](#quick-start)); step 2, the six-bucket decomposition, is next. The design is in [SPEC.md](SPEC.md) and the build order is its section 6.
 
@@ -74,7 +74,11 @@ The rest of the core's output in [SPEC.md § 5.1](SPEC.md#51-core-library-standa
 
 ## Layout
 
-See [SCHEMA.md](SCHEMA.md). In brief: `SPEC.md` is the design of record, `recon_engine/` is the core package (build step 1: `schemas.py` and `residual.py`), and `tests/` is its pytest suite.
+See [SCHEMA.md](SCHEMA.md). In brief: `SPEC.md` is the design of record, `recon_engine/` is the core package (build step 1: `schemas.py` and `residual.py`), and `tests/` is its pytest suite. `docs/` holds the constitution, the amendment log and the ADRs, and `features/features.yml` lists each step of the build order with its status.
+
+## Documentation
+
+Every document is indexed in [docs/README.md](docs/README.md). The rules every change must satisfy are in [docs/constitution.md](docs/constitution.md); to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Development
 
