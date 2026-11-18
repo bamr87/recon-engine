@@ -16,7 +16,11 @@ Three pieces are planned:
 
 ## Layout
 
-See [SCHEMA.md](SCHEMA.md). In brief: `SPEC.md` is the design of record, `recon_engine/` is the core package (stub until build step 1 lands), `tests/` arrives with it.
+See [SCHEMA.md](SCHEMA.md). In brief: `SPEC.md` is the design of record, `recon_engine/` is the core package (stub until build step 1 lands), `tests/` arrives with it. `docs/` holds the constitution, the amendment log and the ADRs, and `features/features.yml` lists each step of the build order with its status.
+
+## Documentation
+
+Every document is indexed in [docs/README.md](docs/README.md). The rules every change must satisfy are in [docs/constitution.md](docs/constitution.md); to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Development
 
