@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "recon-engine"
-version = "0.0.1"
+version = "0.1.0"
 description = "Reconciles an operational event stream against the general ledger and decomposes the residual."
 readme = "README.md"
 license = "MIT"
