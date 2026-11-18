@@ -17,6 +17,7 @@ coverage: listed
 | entry | kind | purpose | rules |
 | --- | --- | --- | --- |
 | `recon_engine/` | dir | the core library (neutral schemas, decomposition, statistical layer) | required |
+| `tests/` | dir | the pytest suite for the core library | required |
 | `docs/` | dir | the docs index, the constitution, the amendment log and the ADRs | required |
 | `features/` | dir | the feature catalog, `features.yml` (schema features/v1) | required |
 | `tools/` | dir | repository scripts vendored from the hub (the prose check) |  |
@@ -25,7 +26,7 @@ coverage: listed
 | `README.md` | file | what the project is and how to work on it | required |
 | `AGENTS.md` | file | agent instructions; `CLAUDE.md` imports it | required |
 | `CLAUDE.md` | file | imports `AGENTS.md` for Claude Code | required |
-| `pyproject.toml` | file | package metadata | required |
+| `pyproject.toml` | file | package metadata, the `dev` extra, and the pytest and ruff settings | required |
 | `LICENSE` | file | MIT | required |
 | `CHANGELOG.md` | file | what shipped; written by release-please | generated |
 | `release-please-config.json` | file | release-please configuration (its manifest is `.release-please-manifest.json`) |  |
@@ -37,7 +38,7 @@ coverage: listed
 
 - Core logic → `recon_engine/`
 - An adapter → `recon_engine/adapters/<source>/` (create with its own `SCHEMA.md`)
-- Tests → `tests/` (create with its own `SCHEMA.md` when the first test lands)
+- Tests → `tests/`
 - A decision that is hard to reverse → `docs/adr/NNNN-slug.md`; a change to the constitution → `docs/amendments/NNNN-slug.md`
 - A new capability → an entry in `features/features.yml`, then regenerate the SPEC.md block
 - Anything unrouted → propose an entry in this table first, then create it.

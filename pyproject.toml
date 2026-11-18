@@ -11,5 +11,21 @@ license = "MIT"
 requires-python = ">=3.12"
 dependencies = []
 
+[project.optional-dependencies]
+# Development tools only; the core package keeps `dependencies = []`.
+dev = ["pytest", "pytest-cov", "ruff"]
+
 [tool.setuptools.packages.find]
 include = ["recon_engine*"]
+
+[tool.pytest.ini_options]
+# No --cov in addopts: CI installs only the project and pytest. Coverage is opt-in:
+# python3 -m pytest --cov=recon_engine
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
